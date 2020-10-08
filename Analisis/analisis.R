@@ -1,6 +1,6 @@
 # Universidad del Valle de Guatemala
 # Proyecto #1
-# Integrantes: Oscar Ju√°rez, Jos√© Cifuentes, Luis Esturban
+# Integrantes: Oscar Ju·rez, JosÈ Cifuentes, Luis Esturban
 # Fecha: 30/03/2020
 
 setwd("./")
@@ -13,12 +13,12 @@ FallecidosLesionados<-read.csv("./FallecidosLesionados.csv",stringsAsFactors = F
 
 # d. Graficos exploratorios que le de ideas del estado de los datos.
 
-                #Hechos de transito
+#Hechos de transito
 View(HechoTransito)
-#En que a√±os hay mas accidentes?
-barplot(table(HechoTransito[,"a√±o_ocu"]),
-        main = "Cantidad de accidentes al a√±o",
-        xlab = "A√±os", ylab = "Cantidad de accidentes",
+#En que aÒos hay mas accidentes?
+barplot(table(HechoTransito[,"aÒo_ocu"]),
+        main = "Cantidad de accidentes al aÒo",
+        xlab = "AÒos", ylab = "Cantidad de accidentes",
         col = "royalblue")
 
 #Que municipios tiene mas accidentes?
@@ -27,7 +27,7 @@ View(head(municipiosList[order(municipiosList$Freq,decreasing = TRUE),],n=5))
 
 
 #Que tipo de vehiculo tiene mas accidentes?
-#En que a√±os hay mas accidentes?
+#En que aÒos hay mas accidentes?
 barplot(table(HechoTransito[,"tipo_veh"]),
         main = "Cantidad de accidentes por tipo de vehiculo",
         xlab = "Tipo vehiculo", ylab = "Cantidad de accidentes",
@@ -41,13 +41,13 @@ barplot(table(HechoTransito[,"mes_ocu"]),
         col = "royalblue")
 
 #En que dia de la semana hay mas accidentes
-barplot(table(HechoTransito[,"d√≠a_sem_ocu"]),
+barplot(table(HechoTransito[,"dÌa_sem_ocu"]),
         main = "Cantidad de accidentes por mes",
         xlab = "Mes", ylab = "Cantidad de accidentes",
         col = "royalblue")
 
 
-                #importaciones
+#importaciones
 View(importaciones)
 
 #De que paises hay mas importaciones
@@ -58,94 +58,94 @@ View(head(paisesImportaciones[order(paisesImportaciones$Freq,decreasing = TRUE),
 aduanas<-as.data.frame(table(importaciones[,"Aduana.de.Ingreso"]))
 View(head(aduanas[order(aduanas$Freq,decreasing = TRUE),],n=5))
 
-#Que modelos de carros son los que mas ingresan por a√±o
+#Que modelos de carros son los que mas ingresan por aÒo
 
-                #2011
+#2011
 barplot(table(importaciones[importaciones$Anio=="2011","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2011",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2011","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2012
+#2012
 barplot(table(importaciones[importaciones$Anio=="2012","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2012",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2012","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2013
+#2013
 barplot(table(importaciones[importaciones$Anio=="2013","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2013",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2013","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2014
+#2014
 barplot(table(importaciones[importaciones$Anio=="2014","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2014",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2014","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2015
+#2015
 barplot(table(importaciones[importaciones$Anio=="2015","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2015",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2015","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2016
+#2016
 barplot(table(importaciones[importaciones$Anio=="2016","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2016",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2016","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
 
-                #2017
+#2017
 barplot(table(importaciones[importaciones$Anio=="2017","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2017",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2017","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2018
+#2018
 barplot(table(importaciones[importaciones$Anio=="2018","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2018",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2018","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2019
+#2019
 barplot(table(importaciones[importaciones$Anio=="2019","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2019",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2019","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
-                #2020
+#2020
 barplot(table(importaciones[importaciones$Anio=="2020","Modelo.del.Vehiculo"]),
         main = "Modelos importados en el 2020",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2020","Modelo.del.Vehiculo"]))
@@ -155,65 +155,65 @@ View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 tipoVehiculo<-as.data.frame(table(importaciones[,"Tipo.de.Vehiculo"]))
 View(tipoVehiculo[order(tipoVehiculo$Freq,decreasing = TRUE),])
 
-#Que modelos de motos son las mas importadas por a√±o
-                #2011
+#Que modelos de motos son las mas importadas por aÒo
+#2011
 barplot(table(importaciones[importaciones$Anio=="2011" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2011",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2012
+#2012
 barplot(table(importaciones[importaciones$Anio=="2012" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2012",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2013
+#2013
 barplot(table(importaciones[importaciones$Anio=="2013" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2013",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2014
+#2014
 barplot(table(importaciones[importaciones$Anio=="2014" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2014",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2015
+#2015
 barplot(table(importaciones[importaciones$Anio=="2015" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2015",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2016
+#2016
 barplot(table(importaciones[importaciones$Anio=="2016" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2016",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2017
+#2017
 barplot(table(importaciones[importaciones$Anio=="2017" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2017",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2018
+#2018
 barplot(table(importaciones[importaciones$Anio=="2018" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2018",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2019
+#2019
 barplot(table(importaciones[importaciones$Anio=="2019" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2019",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-                #2020
+#2020
 barplot(table(importaciones[importaciones$Anio=="2020" & importaciones$Tipo.de.Vehiculo=="MOTO","Modelo.del.Vehiculo"]),
         main = "Modelos de motos importados en el 2020",
-        xlab = "A√±o", ylab = "Cantidad de importaciones",
+        xlab = "AÒo", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
 ######################################################################################
@@ -241,10 +241,10 @@ table(HechoTransito$mupio_ocu)
 table(VehiculosInvolucrados$mupio_ocu)
 table(FallecidosLesionados$mupio_ocu)
 
-# Tabla de d√≠a_sem_ocu
-table(HechoTransito$d√≠a_sem_ocu)
-table(VehiculosInvolucrados$d√≠a_sem_ocu)
-table(FallecidosLesionados$d√≠a_sem_ocu)
+# Tabla de dÌa_sem_ocu
+table(HechoTransito$dÌa_sem_ocu)
+table(VehiculosInvolucrados$dÌa_sem_ocu)
+table(FallecidosLesionados$dÌa_sem_ocu)
 
 # Tabla de mes_ocu
 table(HechoTransito$mes_ocu)
@@ -264,41 +264,41 @@ table(FallecidosLesionados$tipo_eve)
 # Tabla de fall_les
 table(FallecidosLesionados$fall_les)
 
-# Tabla de a√±o_ocu
-table(HechoTransito$a√±o_ocu)
-table(VehiculosInvolucrados$a√±o_ocu)
-table(FallecidosLesionados$a√±o_ocu)
+# Tabla de aÒo_ocu
+table(HechoTransito$aÒo_ocu)
+table(VehiculosInvolucrados$aÒo_ocu)
+table(FallecidosLesionados$aÒo_ocu)
 
 # Tabla de g_hora
 table(HechoTransito$g_hora)
 table(VehiculosInvolucrados$g_hora)
 table(FallecidosLesionados$g_hora)
 
-# Tabla de g_edad_80ym√°s
-table(VehiculosInvolucrados$g_edad_80ym√°s)
-table(FallecidosLesionados$g_edad_80ym√°s)
+# Tabla de g_edad_80ym·s
+table(VehiculosInvolucrados$g_edad_80ym·s)
+table(FallecidosLesionados$g_edad_80ym·s)
 
 
-# Tabla de g_edad_60ym√°s
-table(HechoTransito$g_edad_60ym√°s)
-table(VehiculosInvolucrados$g_edad_60ym√°s)
-table(FallecidosLesionados$g_edad_60ym√°s)
+# Tabla de g_edad_60ym·s
+table(HechoTransito$g_edad_60ym·s)
+table(VehiculosInvolucrados$g_edad_60ym·s)
+table(FallecidosLesionados$g_edad_60ym·s)
 
 
 #############################################################################################
 
 
-# Distribucion normal de d√≠a_ocu
-qqnorm(HechoTransito$d√≠a_ocu)
-qqline(HechoTransito$d√≠a_ocu)
+# Distribucion normal de dÌa_ocu
+qqnorm(HechoTransito$dÌa_ocu)
+qqline(HechoTransito$dÌa_ocu)
 
 
-qqnorm(VehiculosInvolucrados$d√≠a_ocu)
-qqline(VehiculosInvolucrados$d√≠a_ocu)
+qqnorm(VehiculosInvolucrados$dÌa_ocu)
+qqline(VehiculosInvolucrados$dÌa_ocu)
 
 
-qqnorm(FallecidosLesionados$d√≠a_ocu)
-qqline(FallecidosLesionados$d√≠a_ocu)
+qqnorm(FallecidosLesionados$dÌa_ocu)
+qqline(FallecidosLesionados$dÌa_ocu)
 
 # Distribucion normal de edad_per
 
