@@ -37,7 +37,14 @@ barplot(cantMotos, col ="royalblue",
         xlab = "Año", ylab = "Cantidad de importaciones")
 
 
-# Accidentes por año solo de motos
+# Fallecidos por año solo de motos
+motosFallecidos <- motosFallecidosLesionados[motosFallecidosLesionados$fall_les == "1",]
+fallecidosPorAnio <- table(motosFallecidos[,"año_ocu"])
+barplot(fallecidosPorAnio, col ="royalblue",
+        main = "Cant. de accidente letales de motos por año",
+        xlab = "Año", ylab = "Cantidad de accidentes")
+
+# Accidentes de motos por año
 accidentesPorAnio <- table(motosInvolucradas[,"año_ocu"])
 barplot(accidentesPorAnio, col ="royalblue",
         main = "Cant. de accidente de motos por año",
