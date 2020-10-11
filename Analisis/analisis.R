@@ -66,7 +66,7 @@ barplot(table(importaciones[importaciones$Anio=="2011","Modelo.del.Vehiculo"]),
         xlab = "Año", ylab = "Cantidad de importaciones",
         col = "royalblue")
 
-importacionesAnio<-as.data.frame(table(importaciones[importaciones$Anio=="2011","Modelo.del.Vehiculo"]))
+importacionesAnio<-as.data.frame( table(importaciones[importaciones$Anio=="2011","Modelo.del.Vehiculo"]))
 View(importacionesAnio[order(importacionesAnio$Freq,decreasing = TRUE),])
 
 #2012
@@ -287,22 +287,5 @@ table(FallecidosLesionados$g_edad_60ymás)
 
 #############################################################################################
 
-
-# Distribucion normal de día_ocu
-qqnorm(HechoTransito$día_ocu)
-qqline(HechoTransito$día_ocu)
-
-
-qqnorm(VehiculosInvolucrados$día_ocu)
-qqline(VehiculosInvolucrados$día_ocu)
-
-
-qqnorm(FallecidosLesionados$día_ocu)
-qqline(FallecidosLesionados$día_ocu)
-
-# Distribucion normal de edad_per
-
-qqnorm(FallecidosLesionados$edad_per)
-qqline(FallecidosLesionados$edad_per)
 
 

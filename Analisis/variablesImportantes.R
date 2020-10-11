@@ -1,8 +1,7 @@
 # Universidad del Valle de Guatemala
-# Proyecto #1
-# Integrantes: Oscar Juárez, José Cifuentes, Luis Esturban
-# Fecha: 30/03/2020
-
+# Laboratorio #8
+# Integrantes: Oscar Juárez, José Cifuentes, Paul Belches
+# Fecha: 10/10/2020
 library("ggpubr")
 library(corrplot)
 library(plyr)
@@ -16,6 +15,33 @@ VehiculosInvolucrados<-read.csv("./VehiculosInvolucrados.csv",stringsAsFactors =
 fallecidosLesionados<- read.csv("./FallecidosLesionados.csv", stringsAsFactors = FALSE)
 importaciones <- read.csv("./importacionesVehiculosSAT.csv", stringsAsFactors = FALSE)
 
+# Restricción de datos a solo motos
+motosFallecidosLesionados <- fallecidosLesionados[fallecidosLesionados$tipo_veh == "4",]
+motosInvolucradas <- VehiculosInvolucrados[VehiculosInvolucrados$tipo_veh == "4",]
+
+# obtenemos un conteo de accidentes por departamento
+municipiosAccidentes <- table(motosInvolucradas[,"depto_ocu"])
+names(municipiosAccidentes) = c("Guatemala", "El Progreso", "Sacatepéquez", "Chimaltenango", "Escuintla", "Santa Rosa", "Sololá", "Totonicapán", "Quetzaltenango", "Suchitepéquez", "Retalhuleu", "San Marcos", "Huehuetenango", "Quiché", "Baja Verapaz", "Alta Verapaz", "Petén", "Izabal", "Zacapa", "Chiquimula", "Jalapa", "Jutiapa")
+deptoOcuDesc <- municipiosAccidentes[order(municipiosAccidentes, decreasing = TRUE)]
+barplot(deptoOcuDesc[1:6], col = "royalblue",
+        main = "Departamentos con más accidentes de motos (2016 - 2018)",
+        xlab = "Departamentos", ylab = "Cantidad de accidentes",
+        )
+
+# Restricción a solo importaciones de moto por año
+motosImportaciones <- importaciones[importaciones$Tipo.de.Vehiculo == "MOTO",]
+cantMotos <- t(as.matrix(count(motosImportaciones, "Anio")))
+colnames(cantMotos) = c("2012","2013","2014","2015","2016","2017","2018","2019","2020")
+barplot(cantMotos, col ="royalblue",
+        main = "Cant. de importaciones de motos por año",
+        xlab = "Año", ylab = "Cantidad de importaciones")
+
+
+# Accidentes por año solo de motos
+accidentesPorAnio <- table(motosInvolucradas[,"año_ocu"])
+barplot(accidentesPorAnio, col ="royalblue",
+        main = "Cant. de accidente de motos por año",
+        xlab = "Año", ylab = "Cantidad de accidentes")
 
 # Tipo Cantidad de tipos de vehículsos durante todos los años
 cantTipoVeh <- table(importaciones[,"Tipo.de.Vehiculo"])
