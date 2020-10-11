@@ -43,6 +43,48 @@ barplot(accidentesPorAnio, col ="royalblue",
         main = "Cant. de accidente de motos por año",
         xlab = "Año", ylab = "Cantidad de accidentes")
 
+
+
+# CSV accidentes de motos por fecha
+accidentesPorDia <- count(motosInvolucradas[,c("día_ocu","mes_ocu","año_ocu")])
+colnames(accidentesPorDia) = c("Dia", "Mes", "Anio", "TotalAccidentes")
+csvData <- accidentesPorDia[order(
+              accidentesPorDia$año_ocu,
+              accidentesPorDia$mes_ocu,
+              accidentesPorDia$día_ocu),]
+
+# Escribir al CSV
+write.csv(csvData, file="../Data/AccidentesPorDia.csv", row.names = FALSE)
+
+
+
+
+# CSV importaciones de motos por fecha
+importacionesPorDia <- count(motosImportaciones[,c("Dia","Mes","Anio")])
+colnames(importacionesPorDia) = c("Dia", "Mes", "Anio", "TotalImportaciones")
+csvData <- importacionesPorDia[order(
+            importacionesPorDia$Anio,
+            importacionesPorDia$Mes,
+            importacionesPorDia$Dia),]
+# Escribir al CSV
+write.csv(csvData, file="../Data/ImportacionesPorDia.csv", row.names = FALSE)
+
+
+
+# Juntar datos
+dataJunta <- merge(accidentesPorDia, importacionesPorDia, all = TRUE)
+dataJunta[is.na(dataJunta)] <- 0
+csvData <- dataJunta[order(
+            dataJunta$Anio,
+            dataJunta$Mes,
+            dataJunta$Dia),]
+
+# Escribir al CSV
+write.csv(csvData, file="../Data/DatosPorDia.csv", row.names = FALSE)
+
+
+
+
 # Tipo Cantidad de tipos de vehículsos durante todos los años
 cantTipoVeh <- table(importaciones[,"Tipo.de.Vehiculo"])
 # Hacemos que el orden de la tabla sea descendiente

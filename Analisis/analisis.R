@@ -1,8 +1,7 @@
 # Universidad del Valle de Guatemala
-# Proyecto #1
-# Integrantes: Oscar Juárez, José Cifuentes, Luis Esturban
-# Fecha: 30/03/2020
-
+# Laboratorio #8
+# Integrantes: Oscar Juárez, José Cifuentes, Paul Belches
+# Fecha: 10/10/2020
 setwd("./")
 
 HechoTransito<-read.csv("./HechoTransito.csv",stringsAsFactors = FALSE)

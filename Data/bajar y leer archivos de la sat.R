@@ -1,6 +1,7 @@
-#Lynette García Pérez
-#Febrero 2019
-#Script que sirve para descargar y unir archivos de datos de importación de vehículos de la SAT
+# Universidad del Valle de Guatemala
+# Laboratorio #8
+# Integrantes: Oscar Ju�rez, Jos� Cifuentes, Paul Belches
+# Fecha: 10/10/2020
 
 #Paquetes necesarios
 #lubridate -> install.packages("lubridate")

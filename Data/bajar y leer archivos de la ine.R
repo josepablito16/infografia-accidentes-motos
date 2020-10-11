@@ -1,6 +1,7 @@
-# Oscar Juarez
-# Febrero 2019
-# Script que sirve para descargar y unir archivos de datos de vehículos de la INE
+# Universidad del Valle de Guatemala
+# Laboratorio #8
+# Integrantes: Oscar Juárez, José Cifuentes, Paul Belches
+# Fecha: 10/10/2020
 
 #Paquetes necesarios
 #install.packages("lubridate")
