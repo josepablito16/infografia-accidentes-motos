@@ -1,6 +1,6 @@
 # Universidad del Valle de Guatemala
 # Laboratorio #8
-# Integrantes: Oscar Juárez, José Cifuentes, Paul Belches
+# Integrantes: Oscar Ju?rez, Jos? Cifuentes, Paul Belches
 # Fecha: 10/10/2020
 
 #Paquetes necesarios
@@ -16,10 +16,11 @@ library("openxlsx")
 library("dplyr")
 
 # Directorio principal
-setwd("./")
+setwd("/home/paul/Documents/dataScience/infografia-accidentes-motos/Data")
 
-# Para obtener los links usé la siguiente shiny apps disponible en:https://spannbaueradam.shinyapps.io/r_regex_tester/ con el 
-# código fuente de la página de la SAT y el siguiente patrón: https://portal.sat.gob.gt/portal/descarga/5030/importacion-de-vehiculos/[[:digit:]]{4}/importacion_de_vehiculos_[[:digit:]]{4}_[[:lower:]]+.zip
+getwd()
+# Para obtener los links us? la siguiente shiny apps disponible en:https://spannbaueradam.shinyapps.io/r_regex_tester/ con el 
+# c?digo fuente de la p?gina de la SAT y el siguiente patr?n: https://portal.sat.gob.gt/portal/descarga/5030/importacion-de-vehiculos/[[:digit:]]{4}/importacion_de_vehiculos_[[:digit:]]{4}_[[:lower:]]+.zip
 
 download_without_overwrite <- function(url, folder, nombreArchivo, anio)
 {
@@ -40,6 +41,8 @@ https://www.ine.gob.gt/sistema/uploads/2017/05/30/MVtI7adfQzZWF5uefXZ4xmZVG0vRik
 https://www.ine.gob.gt/sistema/uploads/2018/06/01/2018060193914Nyto5KpgXeUsKGoT4SpRknBumA8etDe4.xlsx
 
 https://www.ine.gob.gt/sistema/uploads/2019/06/10/20190610171521QZwxwRe5OLADYzMpAncpW3yR4defMHqN.xlsx
+
+https://www.ine.gob.gt/sistema/uploads/2020/05/19/20200519180527eLWpCfULaJgv2r4fEn6RGLqXy5knWzmf.xlsx
 "
 
 links_hechos_transito<-"
@@ -48,6 +51,8 @@ https://www.ine.gob.gt/sistema/uploads/2017/05/30/DX2BmYU5m4JfPRhrFHwDRDEs49V7fN
 https://www.ine.gob.gt/sistema/uploads/2018/06/01/2018060194026zskZfNalr2em0qLC5Wn6bxC1mBim617t.xlsx
 
 https://www.ine.gob.gt/sistema/uploads/2019/06/06/20190606220636xaPevkVgXaNin0L0ZmXiN4fm18JAFoLG.xlsx
+
+https://www.ine.gob.gt/sistema/uploads/2020/05/19/20200519180919ITIf0Taxw7mbshQNenoLw9A9K5cR4pMt.xlsx
 "
 
 links_fallecidos_lesionados<-"
@@ -56,6 +61,8 @@ https://www.ine.gob.gt/sistema/uploads/2017/05/30/MVtI7adfQzZWF5uefXZ4xmZVG0vRik
 https://www.ine.gob.gt/sistema/uploads/2018/06/19/201806191110218FciGNFOtT2FJnkTOS0pTzPcDOW8FpLB.xlsx
 
 https://www.ine.gob.gt/sistema/uploads/2019/06/06/20190606220307YRSvO7OHib0rQxKDCTAl2fkXMl05g9Uz.xlsx
+
+https://www.ine.gob.gt/sistema/uploads/2020/05/19/20200519181155Y1KZ2HK3GnWnOvCP6lkZunmf8PiHYFSH.xlsx
 "
 
 
@@ -68,7 +75,7 @@ links_hechos_transito<-links_hechos_transito[links_hechos_transito!=""]
 links_fallecidos_lesionados<-str_trim(unlist(strsplit(links_fallecidos_lesionados,"[[:cntrl:]]")))
 links_fallecidos_lesionados<-links_fallecidos_lesionados[links_fallecidos_lesionados!=""]
 
-# Descargar vinculos de vehículos involucrados
+# Descargar vinculos de veh?culos involucrados
 anio <- 2016
 for (vinculo in links_vehiculos_involucrados) {
   download_without_overwrite(
@@ -81,7 +88,7 @@ for (vinculo in links_vehiculos_involucrados) {
   Sys.sleep(1)
 }
 
-# Descargar vinculos de hechos de tránsito
+# Descargar vinculos de hechos de tr?nsito
 anio <- 2016
 for (vinculo in links_hechos_transito) {
   download_without_overwrite(
@@ -167,9 +174,9 @@ for (archivo in listaArchivos){
 }
 
 #Dataframes que contiene las variables que vamos a utilizar
-dfHechoTransitoLimpio <- select(dfHechoTransito,núm_corre, día_ocu,año_ocu,mes_ocu,día_sem_ocu,mupio_ocu,depto_ocu,tipo_veh,tipo_eve,g_hora,g_hora_5,)
-dfVehiculosInvolucradosLimpio <- select(dfVehiculosInvolucrados,núm_corre, día_ocu,año_ocu,mes_ocu,día_sem_ocu,mupio_ocu,depto_ocu,sexo_per,edad_per,mayor_menor,tipo_veh,tipo_veh,g_edad_80ymás,g_edad_60ymás,edad_quinquenales,g_hora,g_hora_5)
-dfFallecidosLesionadosLimpioselect <- select(dfFallecidosLesionados,núm_corre,año_ocu,día_ocu,g_hora,g_hora_5,mes_ocu,día_sem_ocu,mupio_ocu,depto_ocu,sexo_per,edad_per,g_edad_80ymás,g_edad_60ymás,edad_quinquenales,mayor_menor,tipo_veh,tipo_eve,fall_les,int_o_noint)
+dfHechoTransitoLimpio <- select(dfHechoTransito,n?m_corre, d?a_ocu,a?o_ocu,mes_ocu,d?a_sem_ocu,mupio_ocu,depto_ocu,tipo_veh,tipo_eve,g_hora,g_hora_5,)
+dfVehiculosInvolucradosLimpio <- select(dfVehiculosInvolucrados,n?m_corre, d?a_ocu,a?o_ocu,mes_ocu,d?a_sem_ocu,mupio_ocu,depto_ocu,sexo_per,edad_per,mayor_menor,tipo_veh,tipo_veh,g_edad_80ym?s,g_edad_60ym?s,edad_quinquenales,g_hora,g_hora_5)
+dfFallecidosLesionadosLimpioselect <- select(dfFallecidosLesionados,n?m_corre,a?o_ocu,d?a_ocu,g_hora,g_hora_5,mes_ocu,d?a_sem_ocu,mupio_ocu,depto_ocu,sexo_per,edad_per,g_edad_80ym?s,g_edad_60ym?s,edad_quinquenales,mayor_menor,tipo_veh,tipo_eve,fall_les,int_o_noint)
 
 
 names(dfFallecidosLesionadosLimpioselect)
